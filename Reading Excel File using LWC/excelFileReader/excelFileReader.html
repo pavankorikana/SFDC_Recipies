@@ -1,0 +1,14 @@
+<!--LWC to show list of excel files that are attached to a record as a picklist and on selected and clicked preview initiates a popup/modal that preview data in selected excel file as a datatable-->
+<template>
+    <lightning-card class="slds-p-around_small" title="Excel File Previewer" icon-name="doctype:excel">
+        <div class="slds-p-around_x-small">
+            <br/>
+            <lightning-combobox name="file" label="Select file to preview" value={fileName} placeholder="--Select File--" options={fileNames} onchange={onChange}></lightning-combobox>
+            <br/>
+            <div if:true={showPreview} class="slds-align_absolute-center">
+                <lightning-button variant="brand" label="Show Preview" title="showPreview" onclick={handlePreview}></lightning-button>
+            </div>
+            <br/>
+        </div>
+    </lightning-card>
+</template>

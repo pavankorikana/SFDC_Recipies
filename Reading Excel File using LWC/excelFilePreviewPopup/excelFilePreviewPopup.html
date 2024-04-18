@@ -1,0 +1,19 @@
+<!--LWC Comp to display excel file data as a lightning data table modal-->
+<template>
+    <lightning-card  variant="Narrow"  title="Previewing Excel File(Only First 3 Columns)" icon-name="doctype:excel">
+        <div if:true={isLoading} style="min-height:250px; position:relative">
+            <lightning-spinner variant="brand" alternative-text="Loading" size="large"></lightning-spinner>
+        </div>
+        <div if:false={isLoading} class="slds-p-around_x-small">
+            <br/>
+            <lightning-datatable
+                key-field="id"
+                data={fileData}
+                columns={columnList}
+                hide-checkbox-column
+            >
+            </lightning-datatable>
+            <br/>
+        </div>
+    </lightning-card>
+</template>
